@@ -159,6 +159,9 @@ header{
 #slideshow_container{
     z-index: 0;
 }
+#slideshow_image {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
 #arrow_left{
     height: 100%;
     width: 150px;
