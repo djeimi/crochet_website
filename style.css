@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+header{
+    background-color: #fff;
+
+    height: 70px;
+
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 130px;
+
+    z-index: 1;
+}
+
+.header_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+#img_container img {
+   height: 50px;
+}
+.menu{
+    width: 600px;
+
+    display: flex;
+    flex-direction: row;
+
+    margin-left: 15px;
+}
+.menu_list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+.menu_item {
+    position: relative;
+
+    z-index: 1;
+}
+.header_menu_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    gap: 2px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+}
+.sub_menu {
+    list-style-type: none;
+
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+
+    z-index: 2;
+
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    
+    transition: opacity 0.3s, visibility 0.3s;
+    padding: 0;
+    margin-top: 7px;
+    margin-left: -5px;
+}
+.sub_menu li {
+    padding: 10px;
+}
+.sub_menu li:last-child {
+    border-bottom: none;
+}
+.sub_menu li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+}
+.link:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+.menu_item:hover .sub_menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header_right {
+    width: 400px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    gap: 2px;
+}
+.header_right button{
+    border: none;
+
+    font-size: 18px;
+
+    background-color: transparent;
+}
+
+.content {
+    background-color: #f4f3f3;
+
+    height: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    margin: 0;
+    padding: 0 130px;
+}
+
+#slideshow{
+    height: 380px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 0;
+}
+#arrow_left, #arrow_right, #slideshow_container{
+    position: absolute;
+}
+#slideshow_container{
+    z-index: 0;
+}
+#arrow_left{
+    height: 100%;
+    width: 150px;
+    right: 470px;
+
+    z-index: 1;
+
+    background-color: transparent;
+
+    border: none;
+}
+#arrow_left i, #arrow_right i{
+    font-size: 70px;
+    color: rgba(255, 255, 255, 0.2);
+}
+#arrow_left:hover, #arrow_right:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: visibility 0.3s, opacity 0.3s;
+
+    cursor: pointer;
+}
+#arrow_right{
+    height: 100%;
+    width: 150px;
+    left: 470px;
+
+    z-index: 1;
+
+    background-color: transparent;
+
+    border: none;
+}
+
+#title{
+    margin: 36px 0;
+    padding: 0;
+    text-align: center;
+
+    font-size: 40px;
+}
+
+footer{
+    background-color: #fff;
+
+    height: 70px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 130px;
+
+    z-index: 1;
+}
+.footer_left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footer_left p{
+    margin-left: 15px;
+}
+
+.footer_right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+.footer_right button{
+    border: none;
+    border-radius: 100px;
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgb(187, 184, 184);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: transparent;
+}
+#instagram{
+    background-image: url('photos/insta.webp');
+    background-size: 60px; 
+}
+#youtube{
+    background-image: url('photos/youtube.png');
+    background-size: 52px; 
+}
+#telegram{
+    background-image: url('photos/telegram.png');
+    background-size: 40px; 
+}
+#pinterest{
+    background-image: url('photos/pinterest.png');
+    background-size: 55px; 
+}
+#facebook{
+    background-image: url('photos/facebook.png');
+    background-size: 40px; 
+}
+#classmates{
+    background-image: url('photos/Odnoklassniki.svg.png');
+    background-size: 45px; 
+}
+#vk{
+    background-image: url('photos/vk.png');
+    background-size: 50px; 
+}
