@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             config = data;
-            setInterval(() => {
-                changePhoto('next');
-            }, 10000);
         });
 });
 
@@ -52,3 +49,27 @@ function changePhoto(action) {
         photo.style.transform = 'scale(1)'; 
     }, 500); 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    setInterval(() => {
+        changePhoto('next');
+    }, 10000);
+});
+
+function scrollToTop(){
+    document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.scrollY;
+    let button = document.getElementById("arrow_up");
+
+    if (currentScrollPosition >= 50) {
+        button.style.visibility = "visible";
+    } else {
+        button.style.visibility = "hidden";
+    }
+});
