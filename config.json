@@ -6,5 +6,56 @@
         "photos/slideshow3.webp, Мишки",
         "photos/slideshow4.webp, Змейки 2025",
         "photos/slideshow5.webp, Плюшевые игрушки"
+    ],
+    "page1": [
+        "photos/cards/bear.webp, Медвежонок",
+        "photos/cards/bird.webp, Брелок Птенчик",
+        "photos/cards/snake.webp, Змея плюшевая",
+        "photos/cards/fox.webp, Брелок Лиса", 
+        "photos/cards/snaky.webp, ЗмеЮлька",
+        "photos/cards/penguin.webp, Пингвины",
+        "photos/cards/mini-cat.webp, Мини-Котик в шляпе",
+        "photos/cards/mini-snake.webp, Мини-Змея"
+    ],
+    "page2": [
+        "photos/cards/foxy.webp, Брелок Лисичка",
+        "photos/cards/sheep.webp, Мини овечка Кудряшка",
+        "photos/cards/mini-bear.webp, Мишка в шапке",
+        "photos/cards/frog.webp, ЖаБуська", 
+        "photos/cards/seal.webp, Тюлень",
+        "photos/cards/bat.webp, Летучая мышь",
+        "photos/cards/doll.webp, Кукла Кудряшка",
+        "photos/cards/spaceMan.webp, Маленький космонавт"
+    ],
+    "page3": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page4": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page5": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page6": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page7": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page8": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page9": [
+        "photos/cards/foxy.webp, Брелок Лисичка"
+    ],
+    "page10": [
+        "photos/cards/owl.webp, Совушка",
+        "photos/cards/mini-bag.webp, Сумочка для игрушек",
+        "photos/cards/shy bear.webp, Мишутка",
+        "photos/cards/omelette.webp, Брелок Яичница", 
+        "photos/cards/rattle stich.webp, Погремушка Стич",
+        "photos/cards/mini-toys.webp, Мини-игрушки",
+        "photos/cards/mini-frogs.webp, Лягушата",
+        "photos/cards/bag-goose.webp, Сумка-игрушка Гусь"
     ]
 }

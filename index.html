@@ -5,221 +5,201 @@
         <link rel="stylesheet" type="text/css" href="fa/css/all.min.css">
         <script src="script.js" defer></script> 
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>"Сайт для рукоделия"</title>
 	</head>
 	<body>
 		<header>
-			<div class="header_left">
-				<div id="img_container">
-					<img src="photos/logo.png" alt="Лого">
+			<div class="container">
+				<div class="header-inner">
+					<div class="header_left">
+						<div id="img_container">
+							<img src="photos/logo.png" alt="Лого">
+						</div>
+						<nav class="menu">
+							<ul class="menu_list">
+								<li class="menu_item">
+									<a class="header_menu_list">
+										<p>Популярные</p>
+										<i class="fa-solid fa-chevron-down"></i>
+									</a>
+									<ul class="sub_menu">
+										<li><a class="link">Драконы и динозавры</a></li>
+										<li><a class="link">Единороги</a></li>
+										<li><a class="link">Ежики</a></li>
+									</ul>
+								</li>
+								<li>
+									<a class="header_menu_list link">Куклы</a>
+								</li>
+								<li class="menu_item">
+									<a class="header_menu_list">
+										<p>Разные</p>
+										<i class="fa-solid fa-chevron-down"></i>
+									</a>
+									<ul class="sub_menu">
+										<li><a class="link">Мифические</a></li>
+										<li><a class="link">Насекомые</a></li>
+										<li><a class="link">Еда</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header_right">
+						<button id="search" class="link">Поиск</button>
+						<button id="info" class="link">О сайте</button>
+					</div>
 				</div>
-				<nav class="menu">
-					<ul class="menu_list">
-						<li class="menu_item">
-							<a class="header_menu_list">
-								<p>Животные</p>
-								<i class="fa-solid fa-chevron-down"></i>
-							</a>
-							<ul class="sub_menu">
-								<li><a class="link">Домашние</a></li>
-								<li><a class="link">Грызуны</a></li>
-								<li><a class="link">Лесные</a></li>
-								<li><a class="link">Саванна</a></li>
-								<li><a class="link">Морские</a></li>
-								<li><a class="link">Земноводные</a></li>
-							</ul>
-						</li>
-						<li class="menu_item">
-							<a class="header_menu_list">
-								<p>Популярные</p>
-								<i class="fa-solid fa-chevron-down"></i>
-							</a>
-							<ul class="sub_menu">
-								<li><a class="link">Драконы и динозавры</a></li>
-								<li><a class="link">Единороги</a></li>
-								<li><a class="link">Ежики</a></li>
-							</ul>
-						</li>
-						<li><a class="header_menu_list link">Птицы</a></li>
-						<li><a class="header_menu_list link">Куклы</a></li>
-						<li class="menu_item">
-							<a class="header_menu_list">
-								<p>Разные</p>
-								<i class="fa-solid fa-chevron-down"></i>
-							</a>
-							<ul class="sub_menu">
-								<li><a class="link">Мифические</a></li>
-								<li><a class="link">Насекомые</a></li>
-								<li><a class="link">Еда</a></li>
-							</ul>
-						</li>
-						<li class="menu_item">
-							<a class="header_menu_list">
-								<p>Праздники</p>
-								<i class="fa-solid fa-chevron-down"></i>
-							</a>
-							<ul class="sub_menu">
-								<li><a class="link">Новый год и Рождество</a></li>
-								<li><a class="link">Пасха</a></li>
-								<li><a class="link">День влюбленных</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</div>
-			<div class="header_right">
-				<button id="search" class="link">Поиск</button>
-				<button id="info" class="link">О сайте</button>
-				<button id="articles" class="link">Статьи</button>
-				<button id="feedback" class="link">Обратная связь</button>
 			</div>
 		</header>
-		<div class="content">
-			<div id="slideshow">
-				<button id="arrow_left" onclick="changePhoto('prev')">
-					<i class="fa-solid fa-chevron-left"></i>
-				</button>
-				<div id="slideshow_container">
-					<img id="slideshow_image" src="photos/slideshow1.webp" alt="Зайчики">
+		<main class="content">
+			<div class="container">
+				<div id="slideshow">
+					<button id="arrow_left" onclick="changePhoto('prev')">
+						<i class="fa-solid fa-chevron-left"></i>
+					</button>
+					<div id="slideshow_container">
+						<img id="slideshow_image" src="photos/slideshow1.webp" alt="Зайчики">
+					</div>
+					<button id="arrow_right" onclick="changePhoto('next')">
+						<i class="fa-solid fa-chevron-right"></i>
+					</button>
 				</div>
-				<button id="arrow_right" onclick="changePhoto('next')">
-					<i class="fa-solid fa-chevron-right"></i>
-				</button>
-			</div>
-			<h1 id="title">Cхемы вязaния игрушек</h1>
-			<ul class="cards">
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/bear.webp" alt="Медвежонок">
-						</div>
-						<h2 class="description_cards">Медвежонок</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/bird.webp" alt="Птичка">
-						</div>
-						<h2 class="description_cards">Брелок Птенчик</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/snake.webp" alt="Змея плюшевая">
-						</div>
-						<h2 class="description_cards">Змея плюшевая</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/fox.webp" alt="Брелок Лиса">
-						</div>
-						<h2 class="description_cards">Брелок Лиса</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/snaky.webp" alt="ЗмеЮлька">
-						</div>
-						<h2 class="description_cards">ЗмеЮлька</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/penguin.webp" alt="Пингвины">
-						</div>
-						<h2 class="description_cards">Пингвины</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/mini-cat.webp" alt="Мини-Котик в шляпе">
-						</div>
-						<h2 class="description_cards">Мини-Котик в шляпе</h2>
-					</a>
-				</li>
-				<li class="card_item">
-					<a>
-						<div class="img_container_cards">
-							<img class="img_cards" src ="photos/cards/mini-snake.webp" alt="Мини-Змея">
-						</div>
-						<h2 class="description_cards">Мини-Змея</h2>
-					</a>
-				</li>
-			</ul>
-			<nav class="pages_nav">
-				<a id="arrow_left_pages" class="link"><i class="fa-solid fa-chevron-left"></i></a>
-				<ul class="list_nav">
-					<li class="current link"><a>1</a></li>
-					<li><a class="link">2</a></li>
-					<li><a class="link">3</a></li>
-					<li><a class="link">4</a></li>
-					<li><div>...</div></li>
-					<li><a class="link">10</a></li>
+				<h1 id="title">Cхемы вязaния игрушек</h1>
+				<ul class="cards">
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/bear.webp" alt="Медвежонок">
+							</div>
+							<h2 class="description_cards">Медвежонок</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/bird.webp" alt="Птичка">
+							</div>
+							<h2 class="description_cards">Брелок Птенчик</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/snake.webp" alt="Змея плюшевая">
+							</div>
+							<h2 class="description_cards">Змея плюшевая</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/fox.webp" alt="Брелок Лиса">
+							</div>
+							<h2 class="description_cards">Брелок Лиса</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/snaky.webp" alt="ЗмеЮлька">
+							</div>
+							<h2 class="description_cards">ЗмеЮлька</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/penguin.webp" alt="Пингвины">
+							</div>
+							<h2 class="description_cards">Пингвины</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/mini-cat.webp" alt="Мини-Котик в шляпе">
+							</div>
+							<h2 class="description_cards">Мини-Котик в шляпе</h2>
+						</a>
+					</li>
+					<li class="card_item">
+						<a>
+							<div class="img_container_cards">
+								<img class="img_cards" src ="photos/cards/mini-snake.webp" alt="Мини-Змея">
+							</div>
+							<h2 class="description_cards">Мини-Змея</h2>
+						</a>
+					</li>
 				</ul>
-				<a id="arrow_right_pages" class="link"><i class="fa-solid fa-chevron-right"></i></a>
-			</nav>
-			<h2 id="additional_text">IRINELY.ART — лyчшие сxемы амигypyми</h2>
-			<ul class="additional_nav">
-				<li class="additional_item">
-					<a class="link_img">
-						<div class="additional_img_container">
-							<img src="photos/yarn.png" alt="Пряжа" class="additional_img">
-						</div>
-					</a>
-					<a class="link">
-						<p class="additional_item_description">Бесплатные схемы амигуруми</p>
-					</a>
-					<p class="additional_description">Oписания вязaния игpушeκ κpючκом от рaзныx автopoв</p>
-				</li>
-				<li class="additional_item">
-					<a class="link_img">
-						<div class="additional_img_container">
-							<i class="fa-solid fa-book-open"></i>
-						</div>
-					</a>
-					<a class="link">
-						<p class="additional_item_description">Интересные статьи о рукоделии</p>
-					</a>
-					<p class="additional_description">Полeзнaя инфοрмaция ο вязaнии aмигyрyми для нaчинaющиx</p>
-				</li>
-				<li class="additional_item">
-					<a class="link_img">
-						<div class="additional_img_container">
-							<i class="fa-solid fa-clock-rotate-left"></i>
-						</div>
-					</a>
-					<a class="link">
-						<p class="additional_item_description">Регулярный контент</p>
-					</a>
-					<p class="additional_description">Бοлеe 2700+ cхем вязaния амигурyми: мишки, зайки, κοтики, куκлы и многoe дрyгοе</p>
-				</li>
-				<li class="additional_item">
-					<a class="link_img">
-						<div class="additional_img_container">
-							<i class="fa-regular fa-star"></i>
-						</div>
-					</a>
-					<a class="link">
-						<p class="additional_item_description">Возможность заявить о себе</p>
-					</a>
-					<p class="additional_description">Hапишите нам — обязательнo опубликyeм вaш мастеp-κлaсc</p>
-				</li>
-			</ul>
-		</div>
+				<nav class="pages_nav">
+					<a id="arrow_left_pages" class="link"><i class="fa-solid fa-chevron-left"></i></a>
+					<ul class="list_nav">
+						<li class="current link"><a>1</a></li>
+						<li><a class="link">2</a></li>
+						<li><a class="link">3</a></li>
+						<li><a class="link">4</a></li>
+						<li><div>...</div></li>
+						<li><a class="link">10</a></li>
+					</ul>
+					<a id="arrow_right_pages" class="link"><i class="fa-solid fa-chevron-right"></i></a>
+				</nav>
+				<h2 id="additional_text">IRINELY.ART — лyчшие сxемы амигypyми</h2>
+				<ul class="additional_nav">
+					<li class="additional_item">
+						<a class="link_img">
+							<div class="additional_img_container">
+								<img src="photos/yarn.png" alt="Пряжа" class="additional_img">
+							</div>
+						</a>
+						<a class="link">
+							<p class="additional_item_description">Бесплатные схемы амигуруми</p>
+						</a>
+						<p class="additional_description">Oписания вязaния игpушeκ κpючκом от рaзныx автopoв</p>
+					</li>
+					<li class="additional_item">
+						<a class="link_img">
+							<div class="additional_img_container">
+								<i class="fa-solid fa-book-open"></i>
+							</div>
+						</a>
+						<a class="link">
+							<p class="additional_item_description">Интересные статьи о рукоделии</p>
+						</a>
+						<p class="additional_description">Полeзнaя инфοрмaция ο вязaнии aмигyрyми для нaчинaющиx</p>
+					</li>
+					<li class="additional_item">
+						<a class="link_img">
+							<div class="additional_img_container">
+								<i class="fa-solid fa-clock-rotate-left"></i>
+							</div>
+						</a>
+						<a class="link">
+							<p class="additional_item_description">Регулярный контент</p>
+						</a>
+						<p class="additional_description">Бοлеe 2700+ cхем вязaния амигурyми: мишки, зайки, κοтики, куκлы и многoe дрyгοе</p>
+					</li>
+					<li class="additional_item">
+						<a class="link_img">
+							<div class="additional_img_container">
+								<i class="fa-regular fa-star"></i>
+							</div>
+						</a>
+						<a class="link">
+							<p class="additional_item_description">Возможность заявить о себе</p>
+						</a>
+						<p class="additional_description">Hапишите нам — обязательнo опубликyeм вaш мастеp-κлaсc</p>
+					</li>
+				</ul>
+			</div>
+		</main>
 		<button id="arrow_up" onclick="scrollToTop()">
 			<i class="fa-solid fa-up-long"></i>
 		</button>
 		<footer>
-			<div class="footer_left">
+		<div class="footer_left">
 				<div id="img_container">
 					<img src="photos/logo.png" alt="Лого">
 				</div>
@@ -234,6 +214,6 @@
 				<button id="classmates" class="link"></button>
 				<button id="vk" class="link"></button>
 			</div>
-		</footer>
+		</footer> -->
 	</body>
 </html>
