@@ -198,7 +198,6 @@ function changePhoto(action) {
     let photo = document.querySelector("#slideshow_image");
     
     photo.style.opacity = 0;
-    photo.style.transform = 'scale(0.9)';
     setTimeout(() => {
         switch (action) {
             case "next":
@@ -229,7 +228,6 @@ function changePhoto(action) {
                 break;
         }
         photo.style.opacity = 1;
-        photo.style.transform = 'scale(1)'; 
     }, 500); 
 }
 
@@ -256,3 +254,18 @@ window.addEventListener('scroll', function() {
         button.style.visibility = "hidden";
     }
 });
+
+function openMenu() {
+    let menu = document.getElementById("mobile-menu");
+    let menuBtn = document.getElementById('mobile-menu-btn');
+
+    if (menuBtn.classList.contains('open')) {
+        menu.style.display = "none";
+        menuBtn.classList.remove('open');
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    } else {
+        menu.style.display = "block";
+        menuBtn.classList.add('open');
+        menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+}

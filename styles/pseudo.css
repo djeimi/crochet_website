@@ -1,0 +1,31 @@
+.sub_menu li:last-child {
+    border-bottom: none;
+}
+
+.link:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.menu_item:hover .sub_menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#arrow_left:hover i, #arrow_right:hover i {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.card_item a:hover .img_cards {
+    transform: scale(1.1);
+}
+
+#arrow_up:hover {
+    background-color: rgb(199, 195, 195);
+    cursor: pointer;
+}

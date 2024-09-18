@@ -1,78 +1,118 @@
 <!doctype html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="fa/css/all.min.css">
-        <script src="script.js" defer></script> 
-        <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>"Сайт для рукоделия"</title>
-	</head>
-	<body>
-		<header>
-			<div class="container">
-				<div class="header-inner">
-					<div class="header_left">
-						<div id="img_container">
-							<img src="photos/logo.png" alt="Лого">
-						</div>
-						<nav class="menu">
-							<ul class="menu_list">
-								<li class="menu_item">
-									<a class="header_menu_list">
-										<p>Популярные</p>
-										<i class="fa-solid fa-chevron-down"></i>
-									</a>
-									<ul class="sub_menu">
-										<li><a class="link">Драконы и динозавры</a></li>
-										<li><a class="link">Единороги</a></li>
-										<li><a class="link">Ежики</a></li>
-									</ul>
-								</li>
-								<li>
-									<a class="header_menu_list link">Куклы</a>
-								</li>
-								<li class="menu_item">
-									<a class="header_menu_list">
-										<p>Разные</p>
-										<i class="fa-solid fa-chevron-down"></i>
-									</a>
-									<ul class="sub_menu">
-										<li><a class="link">Мифические</a></li>
-										<li><a class="link">Насекомые</a></li>
-										<li><a class="link">Еда</a></li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles/reset.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/pseudo.css">
+	<link rel="stylesheet" type="text/css" href="styles/media.css">
+	<link rel="stylesheet" type="text/css" href="fa/css/all.min.css">
+	<script src="script.js" defer></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>"Сайт для рукоделия"</title>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="header-inner">
+				<div class="header_left">
+					<div id="img_container">
+						<img src="photos/logo.png" alt="Лого">
 					</div>
-					<div class="header_right">
-						<button id="search" class="link">Поиск</button>
-						<button id="info" class="link">О сайте</button>
-					</div>
+					<nav class="menu">
+						<ul class="menu_list">
+							<li class="menu_item">
+								<a class="header_menu_list">
+									<p>Популярные</p>
+									<i class="fa-solid fa-chevron-down"></i>
+								</a>
+								<ul class="sub_menu">
+									<li><a class="link">Драконы и динозавры</a></li>
+									<li><a class="link">Единороги</a></li>
+									<li><a class="link">Ежики</a></li>
+								</ul>
+							</li>
+							<li>
+								<a class="header_menu_list link">Куклы</a>
+							</li>
+							<li class="menu_item">
+								<a class="header_menu_list">
+									<p>Разные</p>
+									<i class="fa-solid fa-chevron-down"></i>
+								</a>
+								<ul class="sub_menu">
+									<li><a class="link">Мифические</a></li>
+									<li><a class="link">Насекомые</a></li>
+									<li><a class="link">Еда</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header_right">
+					<button id="search" class="link">Поиск</button>
+					<button id="info" class="link">О сайте</button>
+					<button id="mobile-menu-btn" class="link" onclick="openMenu()">
+						<i class="fa-solid fa-bars"></i>
+					</button>
 				</div>
 			</div>
-		</header>
-		<main class="content">
-			<div class="container">
-				<div id="slideshow">
+		</div>
+	</header>
+	<article id="mobile-menu">
+		<div class="container">
+			<div class="mobile-menu-inner">
+				<div class="buttons_container">
+					<button class="link">Поиск</button>
+					<button class="link">О сайте</button>
+				</div>
+				<div class="dd_list">
+					<p id="dd_list_header">Популярные</p>
+					<ul class="dd_list_items">
+						<li>Драконы и динозавры</li>
+						<li>Единороги</li>
+						<li>Ежики</li>
+					</ul>
+				</div>
+				<div class="dd_list">
+					<p id="dd_list_header">Куклы</p>
+				</div>
+				<div class="dd_list">
+					<p id="dd_list_header">Разные</p>
+					<ul class="dd_list_items">
+						<li>Мифические</li>
+						<li>Насекомые</li>
+						<li>Еда</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</article>
+	<main class="content">
+		<div class="container">
+			<article id="slideshow">
+				<div id="slideshow_container">
+					<img id="slideshow_image" src="photos/slideshow1.webp" alt="Зайчики">
+				</div>
+				<div class="slideshow_btns">
 					<button id="arrow_left" onclick="changePhoto('prev')">
 						<i class="fa-solid fa-chevron-left"></i>
 					</button>
-					<div id="slideshow_container">
-						<img id="slideshow_image" src="photos/slideshow1.webp" alt="Зайчики">
-					</div>
 					<button id="arrow_right" onclick="changePhoto('next')">
 						<i class="fa-solid fa-chevron-right"></i>
 					</button>
 				</div>
+			</article>
+			<article id="schemes">
 				<h1 id="title">Cхемы вязaния игрушек</h1>
 				<ul class="cards">
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/bear.webp" alt="Медвежонок">
+								<img class="img_cards" src="photos/cards/bear.webp" alt="Медвежонок">
 							</div>
 							<h2 class="description_cards">Медвежонок</h2>
 						</a>
@@ -80,7 +120,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/bird.webp" alt="Птичка">
+								<img class="img_cards" src="photos/cards/bird.webp" alt="Птичка">
 							</div>
 							<h2 class="description_cards">Брелок Птенчик</h2>
 						</a>
@@ -88,7 +128,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/snake.webp" alt="Змея плюшевая">
+								<img class="img_cards" src="photos/cards/snake.webp" alt="Змея плюшевая">
 							</div>
 							<h2 class="description_cards">Змея плюшевая</h2>
 						</a>
@@ -96,7 +136,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/fox.webp" alt="Брелок Лиса">
+								<img class="img_cards" src="photos/cards/fox.webp" alt="Брелок Лиса">
 							</div>
 							<h2 class="description_cards">Брелок Лиса</h2>
 						</a>
@@ -104,7 +144,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/snaky.webp" alt="ЗмеЮлька">
+								<img class="img_cards" src="photos/cards/snaky.webp" alt="ЗмеЮлька">
 							</div>
 							<h2 class="description_cards">ЗмеЮлька</h2>
 						</a>
@@ -112,7 +152,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/penguin.webp" alt="Пингвины">
+								<img class="img_cards" src="photos/cards/penguin.webp" alt="Пингвины">
 							</div>
 							<h2 class="description_cards">Пингвины</h2>
 						</a>
@@ -120,7 +160,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/mini-cat.webp" alt="Мини-Котик в шляпе">
+								<img class="img_cards" src="photos/cards/mini-cat.webp" alt="Мини-Котик в шляпе">
 							</div>
 							<h2 class="description_cards">Мини-Котик в шляпе</h2>
 						</a>
@@ -128,7 +168,7 @@
 					<li class="card_item">
 						<a>
 							<div class="img_container_cards">
-								<img class="img_cards" src ="photos/cards/mini-snake.webp" alt="Мини-Змея">
+								<img class="img_cards" src="photos/cards/mini-snake.webp" alt="Мини-Змея">
 							</div>
 							<h2 class="description_cards">Мини-Змея</h2>
 						</a>
@@ -141,11 +181,15 @@
 						<li><a class="link">2</a></li>
 						<li><a class="link">3</a></li>
 						<li><a class="link">4</a></li>
-						<li><div>...</div></li>
+						<li>
+							<div>...</div>
+						</li>
 						<li><a class="link">10</a></li>
 					</ul>
 					<a id="arrow_right_pages" class="link"><i class="fa-solid fa-chevron-right"></i></a>
 				</nav>
+			</article>
+			<article id="additional">
 				<h2 id="additional_text">IRINELY.ART — лyчшие сxемы амигypyми</h2>
 				<ul class="additional_nav">
 					<li class="additional_item">
@@ -179,7 +223,8 @@
 						<a class="link">
 							<p class="additional_item_description">Регулярный контент</p>
 						</a>
-						<p class="additional_description">Бοлеe 2700+ cхем вязaния амигурyми: мишки, зайки, κοтики, куκлы и многoe дрyгοе</p>
+						<p class="additional_description">Бοлеe 2700+ cхем вязaния амигурyми: мишки, зайки, κοтики,
+							куκлы и многoe дрyгοе</p>
 					</li>
 					<li class="additional_item">
 						<a class="link_img">
@@ -193,27 +238,33 @@
 						<p class="additional_description">Hапишите нам — обязательнo опубликyeм вaш мастеp-κлaсc</p>
 					</li>
 				</ul>
-			</div>
-		</main>
-		<button id="arrow_up" onclick="scrollToTop()">
-			<i class="fa-solid fa-up-long"></i>
-		</button>
-		<footer>
-		<div class="footer_left">
-				<div id="img_container">
-					<img src="photos/logo.png" alt="Лого">
+			</article>
+		</div>
+	</main>
+	<button id="arrow_up" onclick="scrollToTop()">
+		<i class="fa-solid fa-up-long"></i>
+	</button>
+	<footer>
+		<div class="container">
+			<div class="footer_inner">
+				<div class="footer_left">
+					<div id="img_container">
+						<img src="photos/logo.png" alt="Лого">
+					</div>
+					<p>© 2024 IRINELY.АRT | Cхемы вязания aмигypуми</p>
 				</div>
-				<p>© 2024 IRINELY.АRT | Cхемы вязания aмигypуми</p>
+				<div class="footer_right">
+					<a href="https://instagram.com/" id="instagram" class="link"></a>
+					<a href="https://youtube.com/" id="youtube" class="link"></a>
+					<a href="https://t.me/" id="telegram" class="link"></a>
+					<a href="https://pinterest.com/" id="pinterest" class="link"></a>
+					<a href="https://fb.com/" id="facebook" class="link"></a>
+					<a href="https://ok.ru/" id="classmates" class="link"></a>
+					<a href="https://vk.me/" id="vk" class="link"></a>
+				</div>
 			</div>
-			<div class="footer_right">
-				<button id="instagram" class="link"></button>
-				<button id="youtube" class="link"></button>
-				<button id="telegram" class="link"></button>
-				<button id="pinterest" class="link"></button>
-				<button id="facebook" class="link"></button>
-				<button id="classmates" class="link"></button>
-				<button id="vk" class="link"></button>
-			</div>
-		</footer> -->
-	</body>
+		</div>
+	</footer>
+</body>
+
 </html>
