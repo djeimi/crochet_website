@@ -1,61 +1,70 @@
 {
-    "logo":"photos/logo.png",
+    "logo":"photos/logos/logo.png",
     "slideshow": [
-        "photos/slideshow1.webp, Зайчики",
-        "photos/slideshow2.webp, Куклы",
-        "photos/slideshow3.webp, Мишки",
-        "photos/slideshow4.webp, Змейки 2025",
-        "photos/slideshow5.webp, Плюшевые игрушки"
+        "photos/slideshowPhotos/slideshow1.webp, Зайчики",
+        "photos/slideshowPhotos/slideshow2.webp, Куклы",
+        "photos/slideshowPhotos/slideshow3.webp, Мишки",
+        "photos/slideshowPhotos/slideshow4.webp, Змейки 2025",
+        "photos/slideshowPhotos/slideshow5.webp, Плюшевые игрушки"
     ],
     "page1": [
-        "photos/cards/bear.webp, Медвежонок",
-        "photos/cards/bird.webp, Брелок Птенчик",
-        "photos/cards/snake.webp, Змея плюшевая",
-        "photos/cards/fox.webp, Брелок Лиса", 
-        "photos/cards/snaky.webp, ЗмеЮлька",
-        "photos/cards/penguin.webp, Пингвины",
-        "photos/cards/mini-cat.webp, Мини-Котик в шляпе",
-        "photos/cards/mini-snake.webp, Мини-Змея"
+        "photos/cards/bear.webp, Медвежонок, [хищник]",
+        "photos/cards/bird.webp, Брелок Птенчик, [птица]",
+        "photos/cards/snake.webp, Змея плюшевая, [пресмыкающееся]",
+        "photos/cards/fox.webp, Брелок Лиса, [хищник]", 
+        "photos/cards/snaky.webp, ЗмеЮлька, [пресмыкающееся]",
+        "photos/cards/penguin.webp, Пингвины, [птица]",
+        "photos/cards/mini-cat.webp, Мини-Котик в шляпе, [мини]",
+        "photos/cards/mini-snake.webp, Мини-Змея, [мини]"
     ],
     "page2": [
-        "photos/cards/foxy.webp, Брелок Лисичка",
-        "photos/cards/sheep.webp, Мини овечка Кудряшка",
-        "photos/cards/mini-bear.webp, Мишка в шапке",
-        "photos/cards/frog.webp, ЖаБуська", 
-        "photos/cards/seal.webp, Тюлень",
-        "photos/cards/bat.webp, Летучая мышь",
-        "photos/cards/doll.webp, Кукла Кудряшка",
-        "photos/cards/spaceMan.webp, Маленький космонавт"
+        "photos/cards/foxy.webp, Брелок Лисичка, [хищник]",
+        "photos/cards/sheep.webp, Мини овечка Кудряшка, [мини пушистик]",
+        "photos/cards/mini-bear.webp, Мишка в шапке, [хищник]",
+        "photos/cards/frog.webp, ЖаБуська, [земноводный]", 
+        "photos/cards/seal.webp, Тюлень, [мини морской]",
+        "photos/cards/bat.webp, Летучая мышь, [дикий рукокрылый]",
+        "photos/cards/doll.webp, Кукла Кудряшка, [кукла]",
+        "photos/cards/spaceMan.webp, Маленький космонавт, [космос человек]"
     ],
     "page3": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/rattle bee.webp, Пчелки, [детское насекомое]", 
+        "photos/cards/unicorn.webp, Единорожек, [мифическое]",
+        "photos/cards/rattle turtle.webp, Черепашка, [детское пресмыкающееся]",
+        "photos/cards/tulips.webp, Тульпаны, [растение]",
+        "photos/cards/mini-plant.webp, Растение, [растение мини]",
+        "photos/cards/groot.webp, Грут, [растение мифическое]",
+        "photos/cards/flowerpot.webp, Кашпо, [растение]",
+        "photos/cards/elf.webp, Девочка-эльф, [мифическое человек]"
     ],
     "page4": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/cactus.webp, Кактус, [растение]",
+        "photos/cards/butterfly.webp, Бабочка, [детское]",
+        "photos/cards/goose.webp, Брелок Гусенок, [птица мини]"
     ],
     "page5": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/bear.webp, Медвежонок, [хищник]"
     ],
     "page6": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/bear.webp, Медвежонок, [хищник]"
     ],
     "page7": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/bear.webp, Медвежонок, [хищник]"
     ],
     "page8": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/bear.webp, Медвежонок, [хищник]"
     ],
     "page9": [
-        "photos/cards/foxy.webp, Брелок Лисичка"
+        "photos/cards/bear.webp, Медвежонок, [хищник]"
     ],
     "page10": [
-        "photos/cards/owl.webp, Совушка",
-        "photos/cards/mini-bag.webp, Сумочка для игрушек",
-        "photos/cards/shy bear.webp, Мишутка",
-        "photos/cards/omelette.webp, Брелок Яичница", 
-        "photos/cards/rattle stich.webp, Погремушка Стич",
-        "photos/cards/mini-toys.webp, Мини-игрушки",
-        "photos/cards/mini-frogs.webp, Лягушата",
-        "photos/cards/bag-goose.webp, Сумка-игрушка Гусь"
+        "photos/cards/owl.webp, Совушка, [птица]",
+        "photos/cards/mini-bag.webp, Сумочка для игрушек, [сумка]",
+        "photos/cards/shy bear.webp, Мишутка, [хищник]",
+        "photos/cards/omelette.webp, Брелок Яичница, [еда мини]", 
+        "photos/cards/rattle stich.webp, Погремушка Стич, [мифическое детское]",
+        "photos/cards/mini-toys.webp, Мини-игрушки, [мини детское]",
+        "photos/cards/mini-frogs.webp, Лягушата, [мини земноводные]",
+        "photos/cards/bag-goose.webp, Сумка-игрушка Гусь, [сумка]"
     ]
 }

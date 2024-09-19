@@ -35,6 +35,8 @@ header {
 
 #img_container img {
     height: 50px;
+
+    cursor: pointer;
 }
 
 .menu {
@@ -469,36 +471,36 @@ footer {
 }
 
 #instagram {
-    background-image: url('../photos/insta.webp');
+    background-image: url('../photos/logos/insta.webp');
     background-size: 60px;
 }
 
 #youtube {
-    background-image: url('../photos/youtube.png');
+    background-image: url('../photos/logos/youtube.png');
     background-size: 52px;
 }
 
 #telegram {
-    background-image: url('../photos/telegram.png');
+    background-image: url('../photos/logos/telegram.png');
     background-size: 40px;
 }
 
 #pinterest {
-    background-image: url('../photos/pinterest.png');
+    background-image: url('../photos/logos/pinterest.png');
     background-size: 55px;
 }
 
 #facebook {
-    background-image: url('../photos/facebook.png');
+    background-image: url('../photos/logos/facebook.png');
     background-size: 40px;
 }
 
 #classmates {
-    background-image: url('../photos/Odnoklassniki.svg.png');
+    background-image: url('../photos/logos/Odnoklassniki.svg.png');
     background-size: 45px;
 }
 
 #vk {
-    background-image: url('../photos/vk.png');
+    background-image: url('../photos/logos/vk.png');
     background-size: 50px;
 }
