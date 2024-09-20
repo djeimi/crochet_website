@@ -1,5 +1,6 @@
 let flag = 0;
 let config;
+let lastPage;
 let currentFilterPage = 1;
 const itemsPerPage = 8;
 let currentFilter;
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let cards = document.querySelector('.cards');
     let navLinks = document.querySelectorAll('.list_nav a');
     let initialNavLinksLength = navLinks.length;
+    lastPage = navLinks[navLinks.length - 1].textContent;
 
     function updateCards(page) {
         const pageData = config[`page${page}`];
@@ -46,10 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function updateNavigation(page) {
-        navLinks = document.querySelectorAll('.list_nav a');
+        if (page == 1){
+            let list = document.querySelector('.list_nav');
+            let firstPage = 1;
+            list.innerHTML = '';
 
-        if ((page > initialNavLinksLength - 1) && ((navLinks[navLinks.length-1].textContent - page) >= (initialNavLinksLength - 1))){
+            let dotsItemRight = document.createElement('li');
+            let lastLinkItem = document.createElement('li');
 
+            for (let i = firstPage; i <= initialNavLinksLength - 1; i++){
+                let linkItem = document.createElement('li');
+                linkItem.innerHTML = `
+                    <a class="link">${i}</a>
+                `;
+
+                list.appendChild(linkItem);
+            }
+
+            dotsItemRight.innerHTML = `
+                <div>...</div>
+            `;
+            lastLinkItem.innerHTML = `
+                <a class="link">${lastPage}</a>
+            `;
+
+            list.appendChild(dotsItemRight);
+            list.appendChild(lastLinkItem);
+        }
+        else if ((page > initialNavLinksLength - 1) && ((navLinks[navLinks.length-1].textContent - page) >= (initialNavLinksLength - 1))){
+            console.log('1');
             let list = document.querySelector('.list_nav');
             let firstPage = navLinks[0].textContent;
             let lastPage = navLinks[navLinks.length - 1].textContent;
@@ -84,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else{
             if (page < (navLinks[navLinks.length - 1].textContent - page)){
-
+                console.log('2');
                 let list = document.querySelector('.list_nav');
                 let firstPage = navLinks[0].textContent;
                 let lastPage = navLinks[navLinks.length - 1].textContent;
