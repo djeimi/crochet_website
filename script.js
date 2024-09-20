@@ -311,6 +311,8 @@ function extractPhotos(config) {
 }
 
 function updateCardsByFilter(filter) {
+    scrollToTop();
+
     let cards = document.querySelector('.cards');
 
     currentFilter = filter;
