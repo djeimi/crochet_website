@@ -30,13 +30,13 @@
 									<i class="fa-solid fa-chevron-down"></i>
 								</a>
 								<ul class="sub_menu">
-									<li><a class="link" onclick="updateCardsByFilter('птица')">Птицы</a></li>
-									<li><a class="link" onclick="updateCardsByFilter('мини')">Мини-версии</a></li>
-									<li><a class="link" onclick="updateCardsByFilter('сумка')">Сумки</a></li>
+									<li><a class="link" onclick="updateByFilter('птица')">Птицы</a></li>
+									<li><a class="link" onclick="updateByFilter('мини')">Мини-версии</a></li>
+									<li><a class="link" onclick="updateByFilter('сумка')">Сумки</a></li>
 								</ul>
 							</li>
 							<li>
-								<a class="header_menu_list link" onclick="updateCardsByFilter('кукла')">Куклы</a>
+								<a class="header_menu_list link" onclick="updateByFilter('кукла')">Куклы</a>
 							</li>
 							<li class="menu_item">
 								<a class="header_menu_list">
@@ -44,9 +44,9 @@
 									<i class="fa-solid fa-chevron-down"></i>
 								</a>
 								<ul class="sub_menu">
-									<li><a class="link" onclick="updateCardsByFilter('мифическое')">Мифические</a></li>
-									<li><a class="link" onclick="updateCardsByFilter('растение')">Растения</a></li>
-									<li><a class="link" onclick="updateCardsByFilter('детское')">Ποгpeмушκи и рaзвивашκи</a></li>
+									<li><a class="link" onclick="updateByFilter('мифическое')">Мифические</a></li>
+									<li><a class="link" onclick="updateByFilter('растение')">Растения</a></li>
+									<li><a class="link" onclick="updateByFilter('детское')">Ποгpeмушκи и рaзвивашκи</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -182,7 +182,7 @@
 				<h1 id="title">Поиск</h1>
 				<div class="field_button">
 					<input type="search" placeholder="Введите наименование схемы" class="search_field">
-					<button class="search_button">Найти</button>
+					<button class="search_button" onclick="searchPattern()">Найти</button>
 				</div>
 			</div>
 		</div>

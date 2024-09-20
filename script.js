@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 else{
                     currentFilterPage--;
                 }
-                updateCardsByFilter(currentFilter);
+                updateByFilter(currentFilter);
             }
         }
     });
@@ -355,21 +355,10 @@ function extractPhotos(config) {
     return photos;
 }
 
-function updateCardsByFilter(filter) {
+function updateCards(filteredPhotos) {
     scrollToTop();
 
     let cards = document.querySelector('.cards');
-
-    currentFilter = filter;
-    filterSwitchedOn = true;
-
-    let photos = extractPhotos(config);
-
-    let filteredPhotos = photos.filter(item => {
-        let itemArray = item.split(', ');
-        let types = itemArray[2].replace('[','').replace(']','').split(' ');
-        return types.includes(filter);
-    });
 
     let totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
     let startIndex = (currentFilterPage - 1) * itemsPerPage;
@@ -477,10 +466,25 @@ function updateFilterNavigation(totalPages) {
     }
 }
 
+function updateByFilter(filter){
+    currentFilter = filter;
+    filterSwitchedOn = true;
+
+    let photos = extractPhotos(config);
+
+    let filteredPhotos = photos.filter(item => {
+        let itemArray = item.split(', ');
+        let types = itemArray[2].replace('[','').replace(']','').split(' ');
+        return types.includes(filter);
+    });
+
+    updateCards(filteredPhotos);
+}
+
 document.getElementById('arrow_left_pages').addEventListener('click', function() {
     if (currentFilterPage > 1) {
         currentFilterPage--;
-        updateCardsByFilter(currentFilter);
+        updateByFilter(currentFilter);
     }
 });
 
@@ -495,6 +499,50 @@ document.getElementById('arrow_right_pages').addEventListener('click', function(
 
     if (currentFilterPage < totalPages) {
         currentFilterPage++;
-        updateCardsByFilter(currentFilter);
+        updateByFilter(currentFilter);
     }
 });
+
+function searchPattern(){
+    let field = document.querySelector('.search_field');
+    let patternName = field.value.toLowerCase();
+
+    let photos = extractPhotos(config);
+    
+    let filteredPhotos = photos.filter(item => {
+        let itemArray = item.split(', ');
+        let names = itemArray[1].split(' ').map(item => item.toLowerCase());
+
+        return names.some(name => name.includes(patternName));
+    });
+
+    field.value = '';
+
+    let main_content = document.querySelector('.content');
+    let search_article = document.querySelector('main.search_content');
+
+    main_content.style.display = 'block';
+    search_article.style.display = 'none';
+
+    updateCards(filteredPhotos);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('body').addEventListener('focus', function(event) {
+        if (event.target && event.target.classList.contains('search_field')) {
+            event.target.addEventListener('keydown', handleEnterKey);
+        }
+    }, true);
+
+    document.querySelector('body').addEventListener('blur', function(event) {
+        if (event.target && event.target.classList.contains('search_field')) {
+            event.target.removeEventListener('keydown', handleEnterKey);
+        }
+    }, true);
+});
+
+function handleEnterKey(event) {
+    if (event.key === 'Enter') {
+        searchPattern();
+    }
+}
