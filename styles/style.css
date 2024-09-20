@@ -441,7 +441,6 @@ footer {
 }
 
 .footer_left {
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -490,17 +489,52 @@ footer {
     background-size: 55px;
 }
 
-#facebook {
-    background-image: url('../photos/logos/facebook.png');
-    background-size: 40px;
-}
-
-#classmates {
-    background-image: url('../photos/logos/Odnoklassniki.svg.png');
-    background-size: 45px;
-}
-
 #vk {
     background-image: url('../photos/logos/vk.png');
     background-size: 50px;
+}
+
+.search_content{
+    background-color: #f4f3f3;
+
+    display: none;
+
+    flex: 1;
+}
+
+.search_content_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.field_button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+
+    gap: 15px;
+}
+
+.search_field{
+    width: 959.95px;
+    height: 42.3px;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 1%;
+
+    font-size: 20px;
+}
+
+.search_button{
+    width: 72.05px;
+    height: 42.3px;
+
+    background-color: cadetblue;
+    border-radius: 5px;
+
+    font-size: 22px;
 }

@@ -31,6 +31,32 @@
     .additional_nav {
         grid-template-columns: repeat(2, auto);
     }
+
+    .field_button{
+        gap: 15px;
+    }
+    
+    .search_field{
+        width: 650px;
+        height: 42.3px;
+    
+        font-size: 18px;
+    }
+    
+    .search_button{
+        width: 60px;
+        height: 42.3px;
+    
+        font-size: 20px;
+    }
+
+    .footer_left p {
+        margin-left: 10px;
+    }
+
+    .footer_right {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 740px) {
@@ -96,5 +122,23 @@
 
     .footer_left {
         margin-bottom: 25px;
+    }
+
+    .field_button{
+        gap: 15px;
+    }
+    
+    .search_field{
+        width: 495px;
+        height: 42.3px;
+    
+        font-size: 18px;
+    }
+    
+    .search_button{
+        width: 55px;
+        height: 42.3px;
+    
+        font-size: 18px;
     }
 }

@@ -243,11 +243,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    let main_content = document.querySelector('.content');
+    let search_article = document.querySelector('main.search_content');
+
     document.getElementById('img_container').addEventListener('click', function() {
         filterSwitchedOn = false;
         
+        main_content.style.display = 'block';
+        search_article.style.display = 'none';
+
         updateCards(1);
         updateNavigation(1);
+    });
+
+    document.getElementById('search').addEventListener('click', function() {
+        main_content.style.display = 'none';
+        search_article.style.display = 'block';
+
+        let body = document.querySelector('body');
+        body.style.display = 'flex';
+        body.style.flexDirection = 'column';
+        body.style.alignItems = 'stretch';
+
+        body.style.minHeight = '100vh';
     });
 });
 
