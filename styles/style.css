@@ -108,11 +108,6 @@ header {
     font-size: 15px;
 }
 
-.menu_item:hover .sub_menu {
-    opacity: 1;
-    visibility: visible;
-}
-
 .header_right {
     display: flex;
     flex-direction: row;
@@ -250,6 +245,7 @@ article {
     text-align: center;
 
     font-size: 40px;
+    font-weight: 800;
 }
 
 .cards {
@@ -268,6 +264,9 @@ article {
 }
 
 .img_container_cards{
+    width: 285px;
+    overflow: hidden;
+
     align-items: center;
 }
 
@@ -400,7 +399,7 @@ article {
 
 #arrow_up {
     visibility: hidden;
-    z-index: 1;
+    z-index: 2;
 
     position: fixed;
     bottom: 25px;
@@ -412,8 +411,6 @@ article {
     border: none;
     border-radius: 15px;
     background-color: transparent;
-
-    /* transition: opacity 5s ease-in-out, visibility 5s ease-in-out; */
 }
 
 #arrow_up i {
@@ -537,4 +534,72 @@ footer {
     border-radius: 5px;
 
     font-size: 22px;
+}
+
+.articles_content{
+    background-color: #f4f3f3;
+
+    display: none;
+
+    flex: 1;
+}
+
+.articles_content_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.articles_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.article{
+    background-color: rgba(255, 255, 255);
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.article_content_right{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.article_link{
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.description{
+    font-size: 21px;
+}
+
+.read_btn{
+    width: 143.89px;
+    height: 41px;
+
+    background-color: rgb(95, 158, 160); 
+    transition: background-color 0.3s ease;
+
+    border-radius: 5px;
+    font-size: 22px;
+
+    color: white;
+}
+
+.marginForTitle{
+    margin-top: 36px;
 }

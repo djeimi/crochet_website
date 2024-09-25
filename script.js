@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let main_content = document.querySelector('.content');
     let search_article = document.querySelector('main.search_content');
+    let articles = document.querySelector('main.articles_content');
 
     document.getElementById('img_container').addEventListener('click', function() {
         filterSwitchedOn = false;
@@ -295,7 +296,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('search').addEventListener('click', function() {
         main_content.style.display = 'none';
+        articles.style.display = 'none';
         search_article.style.display = 'block';
+
+        let body = document.querySelector('body');
+        body.style.display = 'flex';
+        body.style.flexDirection = 'column';
+        body.style.alignItems = 'stretch';
+
+        body.style.minHeight = '100vh';
+    });
+
+    document.getElementById('articles').addEventListener('click', function() {
+        main_content.style.display = 'none';
+        search_article.style.display = 'none';
+        articles.style.display = 'block';
 
         let body = document.querySelector('body');
         body.style.display = 'flex';

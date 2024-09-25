@@ -3,7 +3,7 @@
 }
 
 .link:hover {
-    color: blueviolet;
+    color: #005c8a;
     cursor: pointer;
 }
 
@@ -28,4 +28,8 @@
 #arrow_up:hover {
     background-color: rgb(199, 195, 195);
     cursor: pointer;
+}
+
+.read_btn:hover {
+    background-color: #005c8a
 }
