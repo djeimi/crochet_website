@@ -603,3 +603,7 @@ footer {
 .marginForTitle{
     margin-top: 36px;
 }
+
+.visited {
+    color: #005c8a;
+}

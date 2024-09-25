@@ -9,6 +9,7 @@ let searchSwitchedOn = false;
 let currentTitle = null;
 let mainTitle;
 let patternName;
+let prevEvent;
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('config.json')
@@ -292,6 +293,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateCards(1);
         updateNavigation(1);
+
+        document.getElementById('search').classList.remove('visited');
+        document.getElementById('articles').classList.remove('visited');
+    
+        document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
+        document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
     });
 
     document.getElementById('search').addEventListener('click', function() {
@@ -305,6 +312,11 @@ document.addEventListener('DOMContentLoaded', function() {
         body.style.alignItems = 'stretch';
 
         body.style.minHeight = '100vh';
+        document.getElementById('search').classList.add('visited');
+        document.getElementById('articles').classList.remove('visited');
+
+        document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
+        document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
     });
 
     document.getElementById('articles').addEventListener('click', function() {
@@ -318,6 +330,11 @@ document.addEventListener('DOMContentLoaded', function() {
         body.style.alignItems = 'stretch';
 
         body.style.minHeight = '100vh';
+        document.getElementById('search').classList.remove('visited');
+        document.getElementById('articles').classList.add('visited');
+    
+        document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
+        document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
     });
 });
 
@@ -522,10 +539,28 @@ function updateFilterNavigation(totalPages) {
 }
 
 function updateByFilter(filter, event){
+    let newCurrentTitle;
     currentFilter = filter;
     filterSwitchedOn = true;
 
-    let newCurrentTitle = event != null ? event.target.innerHTML : currentTitle;
+    document.getElementById('search').classList.remove('visited');
+    document.getElementById('articles').classList.remove('visited');
+
+    if (event != null){
+        if (event != prevEvent){
+            if (prevEvent != null){
+                prevEvent.target.classList.remove('visited')
+            }
+            
+            event.target.classList.add('visited');
+        }
+        
+        newCurrentTitle = event.target.innerHTML;
+    }
+    else{
+        newCurrentTitle = currentTitle;
+    }
+    
     if (currentTitle != newCurrentTitle){
         currentFilterPage = 1;
     }
@@ -540,6 +575,8 @@ function updateByFilter(filter, event){
     });
 
     updateCards(filteredPhotos);
+
+    prevEvent = event;
 }
 
 function searchPattern(){
