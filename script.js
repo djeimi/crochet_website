@@ -5,6 +5,10 @@ let currentFilterPage = 1;
 const itemsPerPage = 8;
 let currentFilter;
 let filterSwitchedOn = false;
+let searchSwitchedOn = false;
+let currentTitle = null;
+let mainTitle;
+let patternName;
 
 document.addEventListener('DOMContentLoaded', function() {
     fetch('config.json')
@@ -22,8 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let navLinks = document.querySelectorAll('.list_nav a');
     let initialNavLinksLength = navLinks.length;
     lastPage = navLinks[navLinks.length - 1].textContent;
+    mainTitle = document.getElementById('title').innerHTML;
 
     function updateCards(page) {
+        document.getElementById('title').innerHTML = mainTitle;
+
         const pageData = config[`page${page}`];
         cards.innerHTML = '';
         pageData.forEach(item => {
@@ -214,12 +221,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.list_nav').addEventListener('click', function(event) {
         if (event.target.tagName === 'A') {
             const page = event.target.textContent;
-            if (!filterSwitchedOn){
+            if (!(filterSwitchedOn || searchSwitchedOn)){
                 event.preventDefault();
                 updateCards(page);
                 updateNavigation(page);
             }
-            else{
+            else if (filterSwitchedOn){
                 if (page > currentFilterPage){
                     currentFilterPage++;
                 }
@@ -228,18 +235,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 updateByFilter(currentFilter);
             }
+            else{
+                if (page > currentFilterPage){
+                    currentFilterPage++;
+                }
+                else{
+                    currentFilterPage--;
+                }
+                searchPattern();
+            }
         }
     });
 
     document.getElementById('arrow_left_pages').addEventListener('click', function() {
-        if (!filterSwitchedOn){
+        if (!(filterSwitchedOn || searchSwitchedOn)){
             navigateTo(this);
+        }
+        else{
+            if (currentFilterPage > 1) {
+                currentFilterPage--;
+            }
+            if(filterSwitchedOn){
+                updateByFilter(currentFilter);
+            }
+            else{
+                searchPattern();
+            }
         }
     });
 
     document.getElementById('arrow_right_pages').addEventListener('click', function() {
-        if (!filterSwitchedOn){
+        if (!(filterSwitchedOn || searchSwitchedOn)){
             navigateTo(this);
+        }
+        else{
+            currentFilterPage++;
+            if(filterSwitchedOn){
+                updateByFilter(currentFilter);
+            }
+            else{
+                searchPattern();
+            }
         }
     });
 
@@ -248,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('img_container').addEventListener('click', function() {
         filterSwitchedOn = false;
+        searchSwitchedOn = false;
         
         main_content.style.display = 'block';
         search_article.style.display = 'none';
@@ -381,6 +418,9 @@ function updateCards(filteredPhotos) {
         `;
         cards.appendChild(cardItem);
     });
+    
+    let title = document.getElementById('title');
+    title.innerHTML = currentTitle;
 
     updateFilterNavigation(totalPages);
 }
@@ -466,9 +506,15 @@ function updateFilterNavigation(totalPages) {
     }
 }
 
-function updateByFilter(filter){
+function updateByFilter(filter, event){
     currentFilter = filter;
     filterSwitchedOn = true;
+
+    let newCurrentTitle = event != null ? event.target.innerHTML : currentTitle;
+    if (currentTitle != newCurrentTitle){
+        currentFilterPage = 1;
+    }
+    currentTitle = newCurrentTitle;
 
     let photos = extractPhotos(config);
 
@@ -481,31 +527,23 @@ function updateByFilter(filter){
     updateCards(filteredPhotos);
 }
 
-document.getElementById('arrow_left_pages').addEventListener('click', function() {
-    if (currentFilterPage > 1) {
-        currentFilterPage--;
-        updateByFilter(currentFilter);
-    }
-});
-
-document.getElementById('arrow_right_pages').addEventListener('click', function() {
-    let photos = extractPhotos(config);
-    let filteredPhotos = photos.filter(item => {
-        let itemArray = item.split(', ');
-        let types = itemArray[2].replace('[','').replace(']','').split(' ');
-        return types.includes(currentFilter);
-    });
-    let totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
-
-    if (currentFilterPage < totalPages) {
-        currentFilterPage++;
-        updateByFilter(currentFilter);
-    }
-});
-
 function searchPattern(){
+    searchSwitchedOn = true;
+
     let field = document.querySelector('.search_field');
-    let patternName = field.value.toLowerCase();
+    
+    if (field.value != ''){
+        patternName = field.value.toLowerCase();
+        
+        let title = patternName.charAt(0).toUpperCase() + patternName.slice(1);
+
+        let newCurrentTitle = title != null ? title : currentTitle;
+        if (currentTitle != newCurrentTitle){
+            currentFilterPage = 1;
+        }
+        currentTitle = newCurrentTitle;
+        field.value = '';
+    }
 
     let photos = extractPhotos(config);
     
@@ -515,8 +553,6 @@ function searchPattern(){
 
         return names.some(name => name.includes(patternName));
     });
-
-    field.value = '';
 
     let main_content = document.querySelector('.content');
     let search_article = document.querySelector('main.search_content');
