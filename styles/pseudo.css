@@ -15,10 +15,10 @@
 #arrow_left:hover i, #arrow_right:hover i {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 0, 0.2);
-
+    
     cursor: pointer;
     
-    transition: visibility 0.3s, opacity 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .card_item a:hover .img_cards {

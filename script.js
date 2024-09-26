@@ -388,8 +388,6 @@ function extractPhotos(config) {
 }
 
 function updateCards(filteredPhotos) {
-    scrollToTop();
-
     let cards = document.querySelector('.cards');
 
     let totalPages = Math.ceil(filteredPhotos.length / itemsPerPage);
