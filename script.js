@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             config = data;
-            updateCards(1);
-            updateNavigation(1);
+            mainUpdateCards(1);
+            mainUpdateNavigation(1);
         })
         setInterval(() => {
             changePhoto('next');}, 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     lastPage = navLinks[navLinks.length - 1].textContent;
     mainTitle = document.getElementById('title').innerHTML;
 
-    function updateCards(page) {
+    function mainUpdateCards(page) {
         document.getElementById('title').innerHTML = mainTitle;
 
         const pageData = config[`page${page}`];
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollToTop();
     }
 
-    function updateNavigation(page) {
+    function mainUpdateNavigation(page) {
         if (page == 1){
             let list = document.querySelector('.list_nav');
             let firstPage = 1;
@@ -215,8 +215,8 @@ document.addEventListener('DOMContentLoaded', function() {
             newPage = Number(currentPage.textContent) + 1;
         }
 
-        updateCards(newPage);
-        updateNavigation(newPage);
+        mainUpdateCards(newPage);
+        mainUpdateNavigation(newPage);
     }
     
     document.querySelector('.list_nav').addEventListener('click', function(event) {
@@ -224,25 +224,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const page = event.target.textContent;
             if (!(filterSwitchedOn || searchSwitchedOn)){
                 event.preventDefault();
-                updateCards(page);
-                updateNavigation(page);
+                mainUpdateCards(page);
+                mainUpdateNavigation(page);
             }
             else if (filterSwitchedOn){
-                if (page > currentFilterPage){
-                    currentFilterPage++;
-                }
-                else{
-                    currentFilterPage--;
-                }
+                currentFilterPage = page;
                 updateByFilter(currentFilter);
             }
             else{
-                if (page > currentFilterPage){
-                    currentFilterPage++;
-                }
-                else{
-                    currentFilterPage--;
-                }
+                currentFilterPage = page;
                 searchPattern();
             }
         }
@@ -280,19 +270,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    let main_content = document.querySelector('.content');
-    let search_article = document.querySelector('main.search_content');
-    let articles = document.querySelector('main.articles_content');
+    document.getElementById('img_container').addEventListener('click', function openMainPage() {
+        let main_content = document.querySelector('main.content');
+        let searchPage_content = document.querySelector('main.search_content');
+        let articlesPage_content = document.querySelector('main.articles_content');
 
-    document.getElementById('img_container').addEventListener('click', function() {
         filterSwitchedOn = false;
         searchSwitchedOn = false;
         
         main_content.style.display = 'block';
-        search_article.style.display = 'none';
+        searchPage_content.style.display = 'none';
+        articlesPage_content.style.display = 'none';
 
-        updateCards(1);
-        updateNavigation(1);
+        mainUpdateCards(1);
+        mainUpdateNavigation(1);
 
         document.getElementById('search').classList.remove('visited');
         document.getElementById('articles').classList.remove('visited');
@@ -302,39 +293,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('search').addEventListener('click', function() {
-        main_content.style.display = 'none';
-        articles.style.display = 'none';
-        search_article.style.display = 'block';
-
-        let body = document.querySelector('body');
-        body.style.display = 'flex';
-        body.style.flexDirection = 'column';
-        body.style.alignItems = 'stretch';
-
-        body.style.minHeight = '100vh';
-        document.getElementById('search').classList.add('visited');
-        document.getElementById('articles').classList.remove('visited');
-
-        document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
-        document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
+        openSpecialPage('searchPage');
     });
 
     document.getElementById('articles').addEventListener('click', function() {
-        main_content.style.display = 'none';
-        search_article.style.display = 'none';
-        articles.style.display = 'block';
-
-        let body = document.querySelector('body');
-        body.style.display = 'flex';
-        body.style.flexDirection = 'column';
-        body.style.alignItems = 'stretch';
-
-        body.style.minHeight = '100vh';
-        document.getElementById('search').classList.remove('visited');
-        document.getElementById('articles').classList.add('visited');
-    
-        document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
-        document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
+        openSpecialPage('articlesPage');
     });
 });
 
@@ -542,6 +505,7 @@ function updateByFilter(filter, event){
     let newCurrentTitle;
     currentFilter = filter;
     filterSwitchedOn = true;
+    openSpecialPage('mainPage');
 
     document.getElementById('search').classList.remove('visited');
     document.getElementById('articles').classList.remove('visited');
@@ -581,6 +545,7 @@ function updateByFilter(filter, event){
 
 function searchPattern(){
     searchSwitchedOn = true;
+    openSpecialPage('mainPage');
 
     let field = document.querySelector('.search_field');
     
@@ -607,10 +572,10 @@ function searchPattern(){
     });
 
     let main_content = document.querySelector('.content');
-    let search_article = document.querySelector('main.search_content');
+    let searchPage_content = document.querySelector('main.search_content');
 
     main_content.style.display = 'block';
-    search_article.style.display = 'none';
+    searchPage_content.style.display = 'none';
 
     updateCards(filteredPhotos);
 }
@@ -633,4 +598,58 @@ function handleEnterKey(event) {
     if (event.key === 'Enter') {
         searchPattern();
     }
+}
+
+function openSpecialPage(pageName){
+    let main_content = document.querySelector('main.content');
+    let searchPage_content = document.querySelector('main.search_content');
+    let articlesPage_content = document.querySelector('main.articles_content');
+    scrollToTop();
+
+    switch(pageName){
+        case 'searchPage':
+            if(searchPage_content.style.display != 'block'){
+                filterSwitchedOn = false;
+                searchSwitchedOn = true;
+
+                main_content.style.display = 'none';
+                articlesPage_content.style.display = 'none';
+                searchPage_content.style.display = 'block';
+
+                document.getElementById('search').classList.add('visited');
+                document.getElementById('articles').classList.remove('visited');
+            }
+            break;
+        case 'articlesPage':
+            if(articlesPage_content.style.display != 'block'){
+                filterSwitchedOn = false;
+                searchSwitchedOn = false;
+
+                main_content.style.display = 'none';
+                articlesPage_content.style.display = 'block';
+                searchPage_content.style.display = 'none';
+                
+                document.getElementById('search').classList.remove('visited');
+                document.getElementById('articles').classList.add('visited');
+            }
+            break;
+        case 'mainPage':
+            if(main_content.style.display != 'block'){
+                main_content.style.display = 'block';
+                articlesPage_content.style.display = 'none';
+                searchPage_content.style.display = 'none';
+                
+                document.getElementById('search').classList.remove('visited');
+                document.getElementById('articles').classList.remove('visited');
+            }
+            break;
+    }
+    let body = document.querySelector('body');
+    body.style.display = 'flex';
+    body.style.flexDirection = 'column';
+    body.style.alignItems = 'stretch';
+    body.style.minHeight = '100vh';
+
+    document.querySelectorAll('.sub_menu li a').forEach(item =>item.classList.remove('visited'));
+    document.querySelectorAll('.menu_list li a').forEach(item =>item.classList.remove('visited'));
 }
